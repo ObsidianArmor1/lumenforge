@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lumenforge</title>
+  <meta name="description" content="An incremental game of light: kindle a star, go supernova, collapse into darkness, and fill the universe with Infinite Light.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="sky"></canvas>
+
+  <header id="top">
+    <div class="brand">
+      <span class="brand-mark">✦</span>
+      <span class="brand-name">LUMENFORGE</span>
+    </div>
+    <div class="res res-light">
+      <div class="res-amount" id="lightAmount">10</div>
+      <div class="res-sub"><span id="lightRate">0</span> Light/sec</div>
+    </div>
+    <div class="res-side">
+      <div class="res-chip sd hidden" id="chipSD" title="Stardust — spend on Constellations"><span class="dot"></span><span id="sdAmount">0</span> Stardust</div>
+      <div class="res-chip dm hidden" id="chipDM" title="Dark Matter — spend on the Horizon"><span class="dot"></span><span id="dmAmount">0</span> Dark Matter</div>
+    </div>
+  </header>
+
+  <div id="trialBanner" class="hidden"></div>
+
+  <main id="main">
+    <aside id="left">
+      <div id="starWrap">
+        <div id="heatRing"></div>
+        <div id="star" role="button" aria-label="Click the Star" tabindex="0">
+          <div class="star-core"></div>
+          <div class="star-rays"></div>
+        </div>
+        <div id="floaters"></div>
+      </div>
+      <div class="star-info">
+        <div><span class="lbl">Click</span> <b id="clickValue">1</b> Light</div>
+        <div><span class="lbl">Heat</span> <b id="heatValue">0</b>% <span class="muted" id="heatBonus">(×1.00)</span></div>
+      </div>
+      <div id="buffs"></div>
+
+      <div id="prestige">
+        <button id="btnSupernova" class="prestige-btn nova hidden">
+          <span class="pb-title">Go Supernova</span>
+          <span class="pb-sub" id="novaSub"></span>
+        </button>
+        <div id="novaHint" class="hint"></div>
+        <button id="btnCollapse" class="prestige-btn collapse hidden">
+          <span class="pb-title">Collapse</span>
+          <span class="pb-sub" id="collapseSub"></span>
+        </button>
+        <div id="collapseHint" class="hint hidden"></div>
+      </div>
+    </aside>
+
+    <section id="content">
+      <nav id="tabs"></nav>
+      <div id="panels">
+        <div class="panel" data-tab="forge" id="panel-forge"></div>
+        <div class="panel" data-tab="upgrades" id="panel-upgrades"></div>
+        <div class="panel" data-tab="stars" id="panel-stars"></div>
+        <div class="panel" data-tab="trials" id="panel-trials"></div>
+        <div class="panel" data-tab="reactor" id="panel-reactor"></div>
+        <div class="panel" data-tab="horizon" id="panel-horizon"></div>
+        <div class="panel" data-tab="achievements" id="panel-achievements"></div>
+        <div class="panel" data-tab="stats" id="panel-stats"></div>
+        <div class="panel" data-tab="options" id="panel-options"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="news"><div id="newsText"></div></footer>
+
+  <div id="cometLayer"></div>
+  <div id="toasts"></div>
+  <div id="tooltip" class="hidden"></div>
+  <div id="modalBack" class="hidden">
+    <div id="modal">
+      <div id="modalTitle"></div>
+      <div id="modalBody"></div>
+      <div id="modalButtons"></div>
+    </div>
+  </div>
+
+  <script src="js/util.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/save.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
